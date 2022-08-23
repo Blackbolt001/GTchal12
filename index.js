@@ -6,8 +6,8 @@ const functions = require('./lib/functions.js');
 const db = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'bootcamp',
-    database:'employees'
+    password:'',
+    database:'employeetracker'
 },
 );
 const init = () => {
@@ -56,7 +56,7 @@ else if (responseSelection >= 10 && responseSelection < 20)
 { 
     if(responseSelection == 10) {functions.createDepartment(db,data.addDepartment)
 };
-    if(responseSelection == 11) {functions.addRole(db,data.addRole,data.setSalary,data.employeeDepartment)
+    if(responseSelection == 11) {functions.addRole(db,data.addRole,data.setSalary,data.roleDepartment)
 };
     if(responseSelection == 12) {functions.addEmployee(db,data.firstName,data.lastName,data.jobs,data.managers)
 };
