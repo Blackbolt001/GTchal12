@@ -25,4 +25,6 @@ VALUES
 (4,"Joe","Shmoe",7,null), 
 (1, "Blues","Clues",2,4),
 (2, "Bob","Barker",5,null),
-(3, "Michael","Finigan",4,4);
+(3, "Michael","Finigan",4,4),
+(5, "Poor","Richard",6,2),
+(6, "Power","Ranger",3,3) ;
