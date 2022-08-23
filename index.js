@@ -6,7 +6,7 @@ const functions = require('./lib/functions.js');
 const db = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'bootcamp',
+    password:'',
     database:'employeetracker'
 },
 );
