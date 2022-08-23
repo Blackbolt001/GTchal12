@@ -7,7 +7,7 @@ const db = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'bootcamp',
-    database:'db_employeetracker'
+    database:'employees'
 },
 );
 const init = () => {
