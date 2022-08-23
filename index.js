@@ -14,7 +14,7 @@ const init = () => {
     showQuestions()
 };
 const prepQuestions = async () => {
-    const setDepartment = await functions.returnDeptArray(db);
+    const setDepartment = await functions.returnDepartmentArray(db);
     prompts.questions[4].choices = setDepartment;
     prompts.questions[12].choices = setDepartment;
     prompts.questions[13].choices = setDepartment;
@@ -33,7 +33,7 @@ setManager.unshift({name:"(none",value:null});
     prompts.questions[15].choices = setEmployee;
     prompts.questions[16].choices = setEmployee;
 
-const setManagers = await functions.returnManagersArray(db);
+const setManagers = await functions.returnManagerArray(db);
     prompts.questions[11].choices = setManagers;
 }
     
@@ -59,9 +59,9 @@ else if (responseSelection >= 10 && responseSelection < 20)
 { 
     if(responseSelection == 10) {functions.createDepartment(db,data.addDepartment)
 };
-    if(responseSelection == 11) {functions.insertRole(db,data.addRole,data.setSalary,data.employeeDepartment)
+    if(responseSelection == 11) {functions.addRole(db,data.addRole,data.setSalary,data.employeeDepartment)
 };
-    if(responseSelection == 12) {functions.insertEmployee(db,data.firstName,data.lastName,data.jobs,data.managers)
+    if(responseSelection == 12) {functions.addEmployee(db,data.firstName,data.lastName,data.jobs,data.managers)
 };
 }
 else if (responseSelection>=20 && responseSelection < 30) 
