@@ -2,12 +2,12 @@ DROP DATABASE IF EXISTS db_employeetracker;
 CREATE DATABASE db_employeetracker;
 
 USE db_employeetracker;
-
+DROP TABLE IF EXISTS department;
 CREATE TABLE department (
   id INT PRIMARY KEY,
   name VARCHAR(30)
 );
-
+DROP TABLE IF EXISTS role;
 CREATE TABLE role (
   id INT PRIMARY KEY,
   title VARCHAR(30),
@@ -15,7 +15,7 @@ CREATE TABLE role (
   department_id INT,
   FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
 );
-
+DROP TABLE IF EXISTS employee;
 CREATE TABLE employee (
   id INT PRIMARY KEY,
   first_name VARCHAR(30),
