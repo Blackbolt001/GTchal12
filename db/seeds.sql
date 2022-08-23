@@ -4,9 +4,9 @@ DELETE FROM department;
 
 INSERT INTO department (id,name)
 VALUES 
-(1,"Pokemon Trainer"), 
-(2, "Clinic Worker"), 
-(3, "Gym Leader");
+(1,"PokemonTrainer"), 
+(2, "ClinicWorker"), 
+(3, "GymLeader");
 
 INSERT INTO role (id,title,salary,department_id)
 VALUES 
@@ -22,7 +22,7 @@ VALUES
 
 INSERT INTO employee (id,first_name, last_name,role_id,manager_id)
 VALUES 
-(1,"Joe","Shmoe",7,null), 
-(2, "Blues","Clues",2,4),
-(8, "Bob","Barker",1,null),
+(4,"Joe","Shmoe",7,null), 
+(1, "Blues","Clues",2,4),
+(2, "Bob","Barker",1,null),
 (3, "Michael","Finigan",4,4);

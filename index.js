@@ -6,7 +6,7 @@ const functions = require('./lib/functions.js');
 const db = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'',
+    password:'bootcamp',
     database:'employeetracker'
 },
 );
@@ -14,24 +14,24 @@ const init = () => {
     showQuestions()
 };
 const prepQuestions = async () => {
-    const setDepartment = await functions.returnDepartmentArray(db);
-    prompts.questions[4].choices = setDepartment;
-    prompts.questions[12].choices = setDepartment;
-    prompts.questions[13].choices = setDepartment;
+    const arrDept = await functions.returnDepartmentArray(db);
+    prompts.questions[4].choices = arrDept;
+    prompts.questions[12].choices = arrDept;
+    prompts.questions[13].choices = arrDept;
 
-const setRole = await functions.returnRoleArray(db);
-    prompts.questions[7].choices = setRole;
-    prompts.questions[10].choices = setRole;
-    prompts.questions[14].choices = setRole;
+const arrRole = await functions.returnRoleArray(db);
+    prompts.questions[7].choices = arrRole;
+    prompts.questions[10].choices = arrRole;
+    prompts.questions[14].choices = arrRole;
 
-const setEmployee  = await functions.returnEmployeeArray(db);
-let setManager = JSON.parse(JSON.stringify(setEmployee));
-setManager.unshift({name:"(none",value:null});
-    prompts.questions[8].choices = setManager;
-    prompts.questions[9].choices = setEmployee;
+const arrEmp  = await functions.returnEmployeeArray(db);
+let arrMgr = JSON.parse(JSON.stringify(arrEmp));
+arrMgr.unshift({name:"(none",value:null});
+    prompts.questions[8].choices = arrMgr;
+    prompts.questions[9].choices = arrEmp;
 
-const setManagers = await functions.returnManagerArray(db);
-    prompts.questions[11].choices = setManagers;
+const arrManagers = await functions.returnManagerArray(db);
+    prompts.questions[11].choices = arrManagers;
 }
     
 const showQuestions = async () => {
